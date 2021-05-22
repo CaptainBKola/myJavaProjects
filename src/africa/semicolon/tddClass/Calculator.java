@@ -1,4 +1,4 @@
-package africa.semicolon.tddClass;
+/* package africa.semicolon.tddClass;
 
 
 public class Calculator {
@@ -30,3 +30,4 @@ public class Calculator {
 
 }
 
+*/

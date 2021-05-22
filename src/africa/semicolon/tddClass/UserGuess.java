@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/*import java.util.Scanner;
 public class UserGuess{
     public static void main(String [] args){
         Scanner collector = new Scanner(System.in);
@@ -48,3 +48,6 @@ public class UserGuess{
         }      
 }
 }
+
+
+ */
