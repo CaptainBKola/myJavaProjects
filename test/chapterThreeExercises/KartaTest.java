@@ -11,11 +11,11 @@ public class KartaTest {
     void calculatesPricePerQuantity(){
 
     Karta price = new Karta();
-    price.setQuantity(4);
+    price.quantityDemand(4);
 
-    assertEquals(6000,price.getPrice());
+    assertEquals(6000,price.calculatePrice());
 
-    assertEquals(2000, price.getProfit());
+    assertEquals(2000, price.calculateProfit());
 
     }
 

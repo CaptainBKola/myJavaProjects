@@ -7,13 +7,13 @@ private int profit;
 
     private int numberOfCopy;
 
-    void setQuantity(int numberOfCopy){
+    void quantityDemand(int numberOfCopy){
 
         this.numberOfCopy = numberOfCopy;
 
     }
 
-    public int getPrice(){
+    public int calculatePrice(){
 
         if (numberOfCopy <= 4){
            pricePerCopy = numberOfCopy * 1500;
@@ -53,7 +53,7 @@ private int profit;
         return pricePerCopy;}
 
 
-    public int getProfit() {
+    public int calculateProfit() {
 
         final int PRICE_AT_RETAIL = 2000;
 
