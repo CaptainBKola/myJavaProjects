@@ -1,18 +1,78 @@
 package BankProject;
 
-public class TestBankProject {
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.math.BigDecimal;
+import java.util.Scanner;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class TestBankProject{
+    private Account account; //declaring each classes here to ignore iterative instantiation of object
+    private Customer customer;
+    private Staffs staffs;
+    private HomePage homePage;
+
+    @BeforeEach
+    void setUp(){
+        account = new Account(0,"12");
+        customer = new Customer();
+        staffs = new Staffs();
+        homePage = new HomePage();
+
+    }
 
 
-    public static void main(String[] args) {
+    @Test
+    void accountCanDepositAndWithdrawAndTransfer(){
 
+account.deposit(300);
+account.deposit(300);
+        //assertEquals(600, account.getDeposit());
+account.setTransfer(200);
+//assertEquals(400, account.getTransfer());
+account.setWithdraw(300);
+        //assertEquals(100, account.getTransfer());
+account.setTransfer(50);
+        assertEquals(50, account.getTransfer());
 
-            MainPage.firstPage();
-            Customer.defaultCustomerLogin();
+    }
 
+    @Test
+    void testAccountCanTransfer(){
+        account.deposit(4000);
+        account.loadAirtime(200,"07036497792");
+        assertEquals(3800,account.getLoadAirtime());
+
+    }
+
+    @Test
+
+    void StaffsCanLogInWithPasswordAndAssignedUsername(){
+    staffs.setLogInPage("username", "password1989");
+
+        assertEquals("password1989", staffs.getLogInPage());
+
+    }
 
 
 
 
 
     }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
