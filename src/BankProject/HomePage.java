@@ -3,21 +3,13 @@ package BankProject;
 import java.util.Scanner;
 
 public class HomePage {
+
     Staffs staffs = new Staffs();
 
 
-    public static void main(String[] args) {
 
-        HomePage homePage = new HomePage();
-
-        homePage.homeDashboard();
-
-
-    }
-
-        Scanner userInput = new Scanner(System.in);
-
-        public void homeDashboard () {
+      static public void homeDashboard (){
+            Scanner userInput = new Scanner(System.in);
             System.out.println("Welcome to Malcon bank");
 
 
@@ -32,13 +24,14 @@ public class HomePage {
 
             if (userOptions == 1) {
 
-                staffs.getLogInPage();
+                Staffs.setLogInPage("username","password1989");
 
 
                 //staff log in page
 
 
             } else if (userOptions == 2) {
+                Customer.setLogInPageCustomer("username","password1989");
                 // Customer log in page
 
 
@@ -50,5 +43,17 @@ public class HomePage {
             }
 
         }
+
+    public static void main(String[] args){
+
+
+
+Account account = new Account();
+
+        HomePage.homeDashboard();
+        System.out.println(account);
+
+    }
+
     }
 

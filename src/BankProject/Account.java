@@ -2,23 +2,28 @@ package BankProject;
 
 public class Account {
 
+    private static int  accountNumberGenerator = 0;
 
-    String  accountNumber;
-    int balance;
+   static int balance;
 
     // Constructor
-    public Account(int initialBalance,String accNumber) {
-        balance = initialBalance;
-        accountNumber = accNumber;
+    public Account() {
+        accountNumberGenerator++;
     }
-    public  void deposit(int amountToDeposit) {
 
+    public static int getAccountNumberGenerator() {
+        return accountNumberGenerator;
+    }
+
+    public static void deposit(int amountToDeposit) {
      balance = amountToDeposit + balance ;
 
     }
-    public void setWithdraw(int amountToWithdraw) {
+    public static void setWithdraw(int amountToWithdraw) {
         balance = balance-amountToWithdraw;
     }
+
+
 
     public int getDeposit() {
         return balance;
@@ -30,7 +35,7 @@ public class Account {
       return balance;
 
     }
-    public void setTransfer( int amount) {
+    public static void setTransfer( int amount) {
       balance = balance-amount;
 
     }
@@ -41,7 +46,7 @@ public class Account {
 
     }
 
-    public void loadAirtime(int amount, String phoneNumber){
+    public static void loadAirtime(int amount, String phoneNumber){
         balance = balance - amount;
 
 
@@ -51,36 +56,15 @@ public class Account {
         return balance;
     }
 
+/*
+    @Override
+    public String toString() {
+        return "Account{" +
+                "balance=" + balance +" account no="+ accountNumberGenerator+
+                '}';
 
-    /*
-public int openNewAccount(String customerName, int openingBalance) {
-BankAccount bank = new BankAccount(customerName, openingBalance);
-boolean isAccountFound = false;
-int i = 0;
-while(isAccountFound == false && i < accounts.length)
-{
-   if(userInput == 5){
-    isAccountFound = true;
-    isMarkedForDeletion = true;
-     accounts[accountNo - 1] = null;
-  } add conditions for this account to replace the old one.
-  // hint: use the isMarkedForDeletion field!
-  // Finally add the new value assignment ( accounts[i] = ... )
-  // return the account number.
-}
-// This will happen in the case there were no matches.
-accounts[numOfAccounts] = b;
-numOfAccounts++;
-return b.getAccountNum();
-}
-    public void deleteAccount(int accountNo) {
-       // accounts[accountNo - 1] = null;
     }
 
-*/
-
-
-
-
+ */
 
 }

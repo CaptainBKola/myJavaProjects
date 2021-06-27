@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Staffs {
 
-     String  staffUserName;
-     String  staffPassword;
+     static String  staffUserName;
+     static String  staffPassword;
 
-    public void setLogInPage(String username, String password) {
+    public static void setLogInPage(String username, String password){
 
 
             if ((username == "username") && (password == "password1989")) {
@@ -18,12 +18,12 @@ public class Staffs {
                 displayPrompt("Enter 4 to view all account\nEnter 5 to view Customers Account\nEnter " +
                         "exit");
                 Scanner input = new Scanner(System.in);
-                int staffOpiton = input.nextInt();
-                if (staffOpiton == 4){
+                int staffOption = input.nextInt();
+                if (staffOption == 4){
 
 
                 }
-                else if(staffOpiton ==5){
+                else if(staffOption==5){
 
                 }
                 else{
@@ -31,14 +31,22 @@ public class Staffs {
                 }
 
             }
+            else{
+                displayPrompt("Incorrect password or Username");
+               // Thread.sleep(5000);
+               // Thread.sleep(5000);
+                HomePage.homeDashboard();
+
+
+            }
 
 
 
         }
 
-    public String getLogInPage(){
+    public static String getLogInPage(){
 
-        return staffPassword;
+        return Staffs.staffPassword;
 
     }
 

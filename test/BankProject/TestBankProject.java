@@ -16,8 +16,8 @@ public class TestBankProject{
 
     @BeforeEach
     void setUp(){
-        account = new Account(0,"12");
-        customer = new Customer();
+        account = new Account();
+        customer = new Customer("Badmus","Kola","07036497792");
         staffs = new Staffs();
         homePage = new HomePage();
 
@@ -46,6 +46,14 @@ account.setTransfer(50);
         assertEquals(3800,account.getLoadAirtime());
 
     }
+    @Test
+    void testAccountNumberCreated(){
+        Account account = new Account();
+        Account account1 = new Account();
+        assertEquals(3,Account.getAccountNumberGenerator());
+
+    }
+
 
     @Test
 
@@ -56,6 +64,22 @@ account.setTransfer(50);
 
     }
 
+
+/*
+    @Test
+    void testCustomerAccountCreationMethod(){
+        customer.setcreateAccount();
+
+
+
+
+    }
+*/    @Test
+    void testCreateAccountMethod(){
+
+
+
+    }
 
 
 
