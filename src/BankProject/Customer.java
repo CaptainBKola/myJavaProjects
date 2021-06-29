@@ -8,7 +8,7 @@ public class Customer {
     public String phoneNumber;
     public  static String customerUserName;
     public  static String customerPassword;
-    private Account account;
+    private final Account account;
 
     // ArrayList<Account> accounts = new ArrayList<>();
 
@@ -16,7 +16,9 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
+        account = new Account();
     }
+
 
 
     public String getLastName() {
@@ -30,9 +32,7 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public Account createAccount() {
-
-
+    public Account getAccount() {
         return account;
 
     }
@@ -75,22 +75,23 @@ public class Customer {
             else if  (userOption ==2){
 
                 Account.setWithdraw(600);
-                System.out.printf("your withdrawal was successful");
+                System.out.println(" your withdrawal was successful");
 
             }
             else if  (userOption ==3){
 
                 Account.setTransfer(600);
 
-                System.out.printf("your transfer was successful");
+                System.out.println(" your transfer was successful");
             }
             else if  (userOption ==4){
 
                 Account.loadAirtime(600,"07036497792");
 
-                System.out.printf("your recharge was successful");
+                System.out.println(" your recharge was successful");
             }
             else{
+                System.out.println("Ooooops incorrect infos!!!");
                 HomePage.homeDashboard();
             }
 

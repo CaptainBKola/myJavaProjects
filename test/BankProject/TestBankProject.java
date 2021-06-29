@@ -65,16 +65,7 @@ account.setTransfer(50);
     }
 
 
-/*
-    @Test
-    void testCustomerAccountCreationMethod(){
-        customer.setcreateAccount();
-
-
-
-
-    }
-*/    @Test
+   @Test
     void testCreateAccountMethod(){
 
 

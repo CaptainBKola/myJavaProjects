@@ -25,14 +25,17 @@ public class HomePage {
             if (userOptions == 1) {
 
                 Staffs.setLogInPage("username","password1989");
-
+                HomePage.homeDashboard();
 
                 //staff log in page
 
 
             } else if (userOptions == 2) {
                 Customer.setLogInPageCustomer("username","password1989");
+
                 // Customer log in page
+                Customer customer = new Customer("jn", "yy", "090999");
+
 
 
             } else {
