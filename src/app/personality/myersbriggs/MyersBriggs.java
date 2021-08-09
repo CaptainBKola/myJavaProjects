@@ -1,10 +1,13 @@
-package MyersBricks;
-
+package app.personality.myersbriggs;
 import java.util.Scanner;
 
+
+
 public class MyersBriggs {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         String[][] extroversionQuestions = new String[5][2];
         String[][] sensingQuestions = new String[5][2];
         String[][] thinkingQuestions = new String[5][2];
@@ -67,7 +70,9 @@ public class MyersBriggs {
             System.out.println("B. " + extroversionQuestions[i][1]);
             System.out.println("Pick an option: A or B");
             String option = getOption(scanner);
+
             if(option.equalsIgnoreCase("A")) extroversion[i] = 1;
+
 
             System.out.printf("Question %d%n", questionNumber++);
             System.out.println("A. " + sensingQuestions[i][0]);
@@ -82,8 +87,8 @@ public class MyersBriggs {
             System.out.println("Pick an option: A or B");
             option = getOption(scanner);
             System.out.printf("Question %d%n", questionNumber++);
-            if(option.equalsIgnoreCase("A")) thinking[i] = 1;
 
+            if(option.equalsIgnoreCase("A")) thinking[i] = 1;
             System.out.println("A. " + judgingQuestions[i][0]);
             System.out.println("B. " + judgingQuestions[i][1]);
             System.out.println("Pick an option: A or B");
@@ -96,16 +101,21 @@ public class MyersBriggs {
         System.out.printf("|%5s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s |%n", " ", "A", "B",
                 " ", "A", "B", " ", "A", "B", " ", "A", "B");
         System.out.printf("%s%n", "-".repeat(74));
+
         questionNumber = 1;
         for (int i = 0; i < extroversion.length; i++) {
-            System.out.printf("|%5d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s |%n", questionNumber++, placeCheckmark(extroversion[i], 1), placeCheckmark(extroversion[i], 2),
+                    System.out.printf("|%5d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s |%n", questionNumber++,
+                    placeCheckmark(extroversion[i], 1), placeCheckmark(extroversion[i], 2),
                     questionNumber++, placeCheckmark(sensing[i], 1), placeCheckmark(sensing[i], 2), questionNumber++,
                     placeCheckmark(thinking[i], 1), placeCheckmark(thinking[i], 2), questionNumber++,
                     placeCheckmark(judging[i], 1), placeCheckmark(judging[i], 2));
         }
+
         System.out.printf("%s%n", "-".repeat(74));
-        System.out.printf("|%5s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d |%n", "TOTAL", countNumbers(extroversion, 1), countNumbers(extroversion, 0),
-                " ", countNumbers(sensing, 1), countNumbers(sensing, 0), " ", countNumbers(thinking, 1), countNumbers(thinking, 0), " ", countNumbers(judging, 1), countNumbers(judging, 0));
+        System.out.printf("|%5s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d |%n", "TOTAL",
+                countNumbers(extroversion, 1), countNumbers(extroversion, 0),
+                " ", countNumbers(sensing, 1), countNumbers(sensing, 0), " ", countNumbers(thinking, 1),
+                countNumbers(thinking, 0), " ", countNumbers(judging, 1), countNumbers(judging, 0));
         System.out.printf("%s%n", "-".repeat(74));
         System.out.printf("|%5s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s |%n", " ", "E", "I",
                 " ", "S", "N", " ", "T", "F", " ", "J", "P");
@@ -164,12 +174,13 @@ public class MyersBriggs {
             throw new IllegalArgumentException("Wrong choice; choose A or B");
         }
     }
+
     public static String getOption(Scanner scanner){
-        String option;
+        String options;
         while (true){
             try {
-                option = getOptionAOrB(scanner.nextLine());
-                return option;
+                options = getOptionAOrB(scanner.nextLine());
+                return options;
             }catch (IllegalArgumentException ex){
                 System.err.println(ex.getMessage());
             }

@@ -44,14 +44,33 @@ public static void converter() {
         }
     }
 
+    //finding that a number exist in a list
+    static boolean findAnumber(int[] number, int num){
+
+
+       for (int digit: number){
+
+            if (digit == num){
+
+                return true;
+            }
+
+        }
+
+       return false;
+
+
+   }
+
 
     public static void main(String[] args) {
 
+        System.out.println( findAnumber(new int[]{2, 34, 5, 6, 5, 3}, 5));
 
-        Karta karta = new Karta();
-        System.out.println(  karta.convertToBaseTwo(6));
-        Karta.binConverter();
-        Karta.converter();
+       // Karta karta = new Karta();
+    //    System.out.println(  karta.convertToBaseTwo(6));
+        //Karta.binConverter();
+      //  Karta.converter();
     }
 
 
